@@ -124,11 +124,11 @@ public class CdCalculator extends javax.swing.JFrame {
         double intRate = Double.parseDouble(Rate.getText());
         double endVal = Double.parseDouble(End.getText());
         
-        double rDec = intRate/100;
+        double rateToDec = intRate/100;
         
         int years = 0;
         for (years=0; cdVal<endVal; years++){
-            cdVal = cdVal + (rDec*cdVal);
+            cdVal = cdVal + (rateToDec*cdVal);
         }
         
         Out.setText("The number of years required is "+years);
