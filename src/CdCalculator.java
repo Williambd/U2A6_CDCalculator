@@ -119,18 +119,21 @@ public class CdCalculator extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void CalculateActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CalculateActionPerformed
-        //gets car
+        //gets initial Cd values, interest rate, and the desired end value.
         double cdVal = Double.parseDouble(Inv.getText());
         double intRate = Double.parseDouble(Rate.getText());
         double endVal = Double.parseDouble(End.getText());
         
+        //converts %rate to decimal
         double rateToDec = intRate/100;
         
+        //every year, it adds on the value of the accumulated interest until the value reaches or passes the desired value.
         int years = 0;
         for (years=0; cdVal<endVal; years++){
             cdVal = cdVal + (rateToDec*cdVal);
         }
         
+        //outputs the number of years.
         Out.setText("The number of years required is "+years);
     }//GEN-LAST:event_CalculateActionPerformed
 
